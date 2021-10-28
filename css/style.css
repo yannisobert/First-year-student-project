@@ -1,0 +1,908 @@
+
+
+
+
+
+/*Mise en place de la base*/
+
+:root /*mise en place des variables css*/
+{
+    --main-color:#9e9a9a;
+    --background-color:#F6F6F6;
+    --background-color-dark:rgb(44, 44, 44);
+    --text-color: black;
+    --text-color-dark: rgb(185, 185, 185);
+    --background-button-color: #bbb8b8;
+    --background-button-color-hover: #9e9a9a;
+    --background-header-footer: #666666;
+    --background-header-footer-hover: #b1afaf;
+    --background-header-footer-dark:black;
+}
+#mobile
+{
+    display: none;/*Le menu standard(ordi) disparait*/
+}
+
+#scrollUp
+{
+position: fixed;
+bottom : 10px;
+right: -100px;
+opacity: 0.5;
+}
+        /* GENERAL */
+
+* /*code pour mettre en place certaines spécifications sur tout le site*/
+{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin:0;
+    text-decoration: none;
+    /*border: 1px solid red;*/ /* Pour voir jusqu'où vont les bordures */
+}
+.logo-rotate{
+    transform: rotate(360deg); /*rotation du logo en haut à gauche*/
+}
+.logo
+{
+    height: 125px;
+    transition: transform 0.5s ease-in-out;
+    margin-top: 0.5%;
+    margin-left: 0.5%;
+}
+body
+{
+    background-color: var(--background-color);
+    color : black;
+}
+
+.dark-mode
+{
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+.header-dark-mode
+{   
+    background-color: var(--background-header-footer-dark);
+    color: var(--text-color-dark);
+}
+
+ul li a:hover /*ha pour but de changer de couleur quand notre curseur passe dessus ou en cliquant dessus sur smartphone*/
+{
+    background-color:var(--background-button-color-hover);
+    border-radius: 10px 10px 10px 10px;
+} 
+
+.wrapper
+{
+    width: 940px;
+    margin: auto;
+    padding: 0 10px;
+    margin-bottom: 32px;
+}
+
+ul /*liste non ordonnée*/
+{
+    padding:0;
+    margin:0;
+    list-style-type:none;
+}
+
+li /*élément de la liste*/
+{
+    margin-left:2px;
+    float:left;
+}
+
+ul li a /* code pour le placement et esthétique de la barre de mune */
+{
+    display:block;
+    float:left;   
+    width:auto;
+    color: black;
+    font-size: 20px;
+    text-decoration:none;
+    text-align:center;
+    padding:5px;
+    margin-top: 50px;
+}
+.abc
+{
+    background-color: #e1251b;
+    font-size: 20px;
+    color :white;
+    height: 100px;
+    width: 200px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 30%;
+}
+#flecheredirection
+{
+    height: 50px;
+    width: 100px;
+}
+
+    /* HEADER */
+
+header 
+{
+    height: 170px;
+    background-color:var(--background-header-footer);
+    border-bottom: 3px solid;
+    top: 0;
+    width: 100%;
+}
+.entete
+{
+    display: flex;
+    justify-content: space-between;
+}
+#one
+{
+    margin-left: 0px;
+    padding-left: 0px;
+}
+#two
+{
+    display: flex;
+    justify-content: center;
+}
+
+    /* Menu Burger */
+    
+.hamburger
+{
+    background:none;
+    position:absolute;
+    line-height:45px;
+    color:#999;
+    border:0;
+    font-size:1.4em;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:10000000000000;
+}
+    
+.cross
+{
+    background:none;
+    position:absolute;
+    color:#999;
+    border:0;
+    font-size:3em;
+    line-height:65px;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:10000000000000;
+}
+
+    /* MAIN IMAGE */
+
+.bouton /*création d'un bouton (taille,couelur,postion,taille,bordure)*/
+{
+    color:#ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 11px;
+    background-color: var(--background-button-color);
+    border-style: none;
+    border-radius: 3px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.bouton:hover /*lorsque que je passe mon curseur dessus sur ordinateur le bouton change de couleur et quand je clique dessus sur smartphone aussi*/
+{
+    color:#ffffff;
+    background-color: var(--background-button-color-hover);
+}
+
+    /* Footer */
+
+footer /*création d'un fond de couleur d'une certaine taille*/
+{
+    height: 200px;
+    background-color: var(--background-header-footer);
+    border-top: 3px solid;
+    margin-top: 100px;
+    width: 100%;
+}
+
+footer h1 /*customisation d'un titre (taille,couleur et placement)*/
+{
+    color:var(--text-color);
+    text-align: center;
+    padding-top: 80px;
+}
+
+.copyright 
+{
+    
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 30px;
+    color: #777;
+}
+
+#btretour /*pour flex et centrer la phrase et le mot qui permet de faire un retour vers le haut de la page*/
+{
+    display: flex;
+    justify-content: center;
+}
+
+.rs /*pour flex la partie des réseaux sociaux en bas de la page*/
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+
+
+        /*Code pour la page d'accueil*/
+#annonce
+{
+    height: 800px;
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-bottom: 50px;
+}   
+#imageannonce
+{
+    margin-top: 50px;
+    background: url(../images/shop/pub.jpg);
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    border : 3px solid;
+}
+
+#colonne /*création de colonne*/
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+    /* Réseaux Sociaux */
+#tweet /*placement d'un tweet*/
+{
+    display: flex;
+    justify-content: center;
+}
+#insta /* placement d'un post insta et sa taille revue*/
+{
+    display: flex;
+    justify-content: center;
+    width: 400px;
+} 
+
+
+    /* Slider */
+#slider {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 90%;
+    margin: auto;
+    border:3px solid;
+    background-color: var(--background-header-footer);   
+}
+#slider > img {
+    height: 100%;
+    width: 90%;
+}
+#precedent, #suivant { /*on met du css sur les boutons du slider*/
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    position: absolute;
+    top: 300px;
+    font-size: 100px;
+    color: rgba(220, 220, 220, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+}
+#precedent {
+    left: 0;
+}
+#suivant {
+    right: 0;
+}
+#slider:hover #precedent, #slider:hover #suivant {
+    opacity: 1;
+}
+
+
+        /*Code pour la page de l'équipe*/
+
+.colonneequipe /*création de colonne*/
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.unequipes /*colonnes de gauche*/
+{
+    display: flex;
+    justify-content: center;
+}
+.deuxequipes /*colonnes de droite*/
+{
+    display: flex;
+    justify-content: center;
+}
+.transitioncitation /* css préparation de base transition */
+{
+    background-color: #fff;
+    color: #444;
+    display: inline-block;
+    font-size: 24px;
+    margin: 8px;
+    max-width: 315px;
+    min-width: 230px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 2s ease;
+}
+.transitioncitation:after
+{
+    background-color: var(--background-button-color);
+
+    height: 150%; /* longueur de base rectangle */
+    bottom: -145%; /* largeur de base rectangle */
+    transition-duration: 1s;
+    content: ''; /* pour faire apparaître la barre grâce à un espace */
+    left: 0;
+    right: 0;
+    position: absolute; /* cette ligne crée l'effet de la barre rouge */
+    
+}
+.transitioncitation img
+{
+    max-width: 100%; /* taille image à l'intérieur */
+}
+.transitioncitation figcaption /* css pour la citation */
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1em;
+    opacity: 0;
+    transition-delay: 0s;
+}
+.transitioncitation h3 /* design h3 */
+{
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
+}
+.transitioncitation:hover > img, /* opacité pour mettre en avant la citation */
+.transitioncitation.hover > img
+{
+    opacity: 0.1;
+}
+.transitioncitation:hover:after,
+.transitioncitation.hover:after
+{
+    bottom: 95%;
+}
+.transitioncitation:hover figcaption,
+.transitioncitation.hover figcaption
+{
+    opacity: 1;
+    transition-delay: 1s;
+    transition-duration: 1s;
+}
+
+    /* JOUEURS PRESENTATION */
+
+.paraun,.paradeux,.paratrois,.paraquatre,.paracinq
+{
+    margin-top: 0px;
+    margin-left: 20px;
+    height: 300px;
+    width: 150px;
+}
+
+
+        /* Code pour la page d'evenements*/
+    /* CENTRE */
+.titletitre
+{
+    margin-top: 50px;
+    margin-left: 25px;
+}
+#colonne
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+#colonne > div
+{
+    width: 45%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#un
+{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    padding-left: 50px;
+    padding-right: 25px;
+    border:3px solid ;
+    background-color: var(--background-header-footer);
+    border-radius: 20px;
+}
+#deux
+{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    padding-left: 50px;
+    padding-right: 25px;
+    border:3px solid ;
+    background-color: var(--background-header-footer);
+    border-radius: 20px;
+}
+#last-annonce
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 100px;
+
+}
+#fondparallax
+{
+    margin-top: 100px;
+}
+#video /*centrer la vidéo et ce code va permettre d'adapter automatiquement sa taille selon la taille de l'écran*/
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+.parallaxun /*effet "parallax" en css*/
+{
+    margin-top: 50px;
+    background-image: url("../images/fonds/fondun.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallaxdeux /*effet "parallax" en css*/
+{
+    margin-top: 50px;
+    background-image: url("../images/fonds/fonddeux.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+        /*Code page du shop*/
+
+#messageshop
+{
+    width: 70%;
+}       
+#boutonfiltre
+{
+    display: flex;
+    justify-content: center;
+}
+#boutonsee
+{
+    display: flex;
+    justify-content: center;
+}
+.btn
+{
+    margin: 5px;
+    margin-top: 0px;
+}
+.ligneun /*création d'une colonne horizontale*/
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 50px;
+    width: 95%;
+}
+#lignedeux
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 50px;
+    width: 95%;
+}
+.container
+{
+    overflow: hidden;
+}
+  
+.filterDiv
+{
+    float: left;
+    background-color: #2196F3;
+    color: #ffffff;
+    width: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin: 2px;
+    display: none; /* Hidden by default */
+}
+.show
+{
+    display: block;
+}
+.petite
+{
+    height: 500px;
+    width: 500px;
+    border: 8px var(--main-color) solid;
+    border-radius: 10px;
+}
+.petite, .grande
+{
+    cursor: pointer
+}
+.grande
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.grande img
+{
+    width: 60%;
+    border: 4px white solid;
+    border-radius: 5px;
+}
+.imagesmoreno /*Boutons pour voir plus/moins d'éléments dans la boutique*/
+{
+    display: none;
+}
+.imagesmorenodeux
+{
+    display: none;
+}
+#boutouseeless
+{
+    display: none;
+}
+#boutouseelessdeux
+{
+    display: none;
+}
+
+    /*Code pour commentaire du shop*/
+.commentaire
+{
+    font-size: 20px;
+    color: red;
+}
+
+
+        /* Code page Contact */
+#contact /*code pour le placement de toute la partie contact*/
+{
+    z-index: -28;
+    display: flex;
+    justify-content: center;
+    margin-top: 180px;
+    padding: 60px 0px;
+    text-align: center;
+    color: black;
+    background-color: rgba(90, 89, 89, 0.9);
+}
+.parallax img
+{
+    width :90%;
+    border-radius: 15px;
+}
+.parallax   
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: -29;
+    color: white;
+}
+
+#contact h3 /*code pour customiser un titre*/
+{
+    width: 400px;
+    text-transform: uppercase;
+    margin: 0 auto 20px auto;
+    border-bottom: 1px solid #BD3C20;
+    padding-bottom: 20px;
+}
+form /*on met du css sur toutes les "form" qui ont cette page css link*/
+{
+    margin: 60px 0 20px 0;
+}
+label /*on met du css sur toutes les "label" qui ont cette page css link*/
+{
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 10px;
+    color:rgb(0, 0, 0);
+}
+input[type="text"] /*on met du css sur toutes les imput avec comme type "text" qui ont cette page css link*/
+{
+    padding: 10px;
+    font-size:20px;
+    margin-right: 20px;
+    border: 2px solid #ddd;
+    border-radius: 3px;
+    margin-top: 10px;;
+}
+input[type="email"] /*on met du css sur toutes les imput avec comme type "email" qui ont cette page css link*/
+{
+    padding: 10px;
+    font-size:20px;
+    margin-right: 20px;
+    border: 2px solid #ddd;
+    border-radius: 3px;
+    margin-top: 10px;;
+}
+textarea /*création d'une zone ou tout le monde peut écrire une fois sur le site*/
+{
+    margin-top: 20px;
+    padding: 20px;
+    font-size:20px;
+    margin-right: 20px;
+    border: 5px solid #ddd;
+    border-radius: 3px;
+    width: 90%;
+}
+
+
+        /*Code pour la page du blog*/
+#article
+{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+#colonnearticle
+{
+    margin-bottom: 300px;
+}
+
+#colonnearticle /*création de colonne*/
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#imagearticle
+{
+    height: 90%;
+    width: 90%;
+}
+.content
+{
+    margin-top: 200px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 1030px) /*code pour le responsive de toutes les pages, c'est ce qui va permettre d'adapter au mieux le design du site*/
+{
+        /*Mise en place pour avoir le menu pour mobile et non celui pour ordi*/
+    #mobile
+    {
+        display: inline;
+    }
+    #ordi
+    {
+    display:none;/*LE menu standard disparait*/
+    }
+        /*Général*/
+    .wrapper
+    {
+        width: auto;
+        margin: auto;
+        padding: 0 10px;
+    }
+    header 
+    {
+        background-color: var(--background-header-footer);
+        height: auto;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: inherit;
+    }
+   
+    #accueil
+    {
+        background: url(../images/banntwitter.jpg) center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    #rs
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    footer
+    {
+        background-color: var(--background-header-footer);
+        width: auto;
+        height: auto;
+    }
+    .parallax img
+    {
+        margin-top: 450px;
+    }
+    #contact h3
+    {
+        width: 200px;
+        text-transform: uppercase;
+        margin: 0 auto 0px auto;
+        border-bottom: 1px solid #BD3C20;
+        padding-bottom: 20px;
+    }
+    .parallax
+    {
+        display: none;
+    }
+    #img-para
+    {
+        display: none;
+    }
+
+        /*code pour la page d'accueil*/
+    #annonce
+    {
+        margin-top: 200px;
+        margin-bottom: 0px;
+        height: 250px;
+    }
+    .abc
+    {
+        width: 110px;
+        height: 50px;
+        font-size: 18px;
+    }
+    #insta
+    { 
+        display: flex;
+        justify-content: center;
+        height: 300px;
+        width: 300px;
+    } 
+    #colonne
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #precedent, #suivant { 
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+        position: absolute;
+        top: 60px;
+        font-size: 40px;
+        color: rgba(220, 220, 220, 0.8);
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+    }
+
+        /*code pour la page d'equipe*/
+    #margetopteamlist
+    {
+        margin-top: 166px;
+    }
+    .colonneequipe
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .paraun,.paradeux,.paratrois,.paraquatre,.paracinq
+    {
+        margin-left: 5px;
+        height: auto;
+        width: auto;
+        padding-top: 20px;
+    }
+    .unequipe
+    {
+        margin-left: 15px;
+    }
+    .deuxequipe
+    {
+        margin-left: 15px;
+    }
+
+        /*code pour la page d'evenement*/
+    .parallaxun
+    {
+        margin-top: 170px;
+    }
+    #colonne
+    {
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        /*code pour la page du shop*/
+    .ligneun
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .petite
+    {
+        width: 100%;
+        height: 100%;
+    }
+    #lignedeux
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #boutonfiltre
+    {
+        margin-top: 200px;
+    }
+
+        /*code pour la page du blog*/
+
+}
+
+
+
+
+

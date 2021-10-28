@@ -1,0 +1,42 @@
+*
+{
+	font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin:0;
+    text-decoration: none;
+    background-color: rgb(201, 201, 201);
+}
+.wrapper
+{
+    width: 100px;
+    margin: auto;
+    padding: 0 10px;
+    margin-bottom: 32px;
+}
+.header
+{
+	display: flex;
+	justify-content: center;
+} 
+#form
+{
+    width: 360px;
+    margin-top: 100px;
+}
+.bouton /*création d'un bouton (taille,couelur,postion,taille,bordure)*/
+{
+    color:#ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 11px;
+    background-color: #bbb8b8;
+    border-style: none;
+    border-radius: 3px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+.bouton:hover /*lorsque que je passe mon curseur dessus sur ordinateur le bouton change de couleur et quand je clique dessus sur smartphone aussi*/
+{
+    color:#ffffff;
+    background-color: #9e9a9a;
+}
